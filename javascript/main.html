@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- firebase sdk-->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
+
+</head>
+<body>
+
+    
+    <nav class="#f57f17 yellow darken-4">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="#modal2" class="modal-trigger">Login</a></li>
+            <li><a href="#modal1" class="modal-trigger">SignUp</a></li>
+            <li><a href="collapsible.html">LogOut</a></li>
+          </ul>
+        </div>
+
+
+
+
+      </nav> <!--  Sign Up Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Signup</h4>
+          <form action="">
+          <input type="text" id="signupuser" placeholder="Email"/>
+          <input type="password" id="signuppassword" placeholder="Password"/>
+          <input type="submit" class="btn waves-effect #f57f17 yellow darken-4"/>
+        </form>
+        </div>
+      
+      </div>
+      
+      
+    </nav> <!-- Log In Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal</a>
+  
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4>
+        <form action="">
+        <input type="text" id="loginuser" placeholder="Email"/>
+        <input type="password" id="loginpassword" placeholder="Password"/>
+        <input type="submit" class="btn waves-effect #f57f17 yellow darken-4"/>
+      </form>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script>
+                     document.addEventListener('DOMContentLoaded', function() {
+                     var elems = document.querySelectorAll('.modal');
+                     var instances = M.Modal.init(elems);
+                      });
+                </script>
+
+
+<!-----------------------------------------firebase code---------------------------------------->
+
+<!--
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+  import { } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvm4eHLEb39wDT289Rf_u43oMJ07p0Bz4",
+    authDomain: "fir-tut1-5a064.firebaseapp.com",
+    projectId: "fir-tut1-5a064",
+    storageBucket: "fir-tut1-5a064.appspot.com",
+    messagingSenderId: "865947246993",
+    appId: "1:865947246993:web:92cadb2026a996344d3a30"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+-->
+<!----------------------------------------------------------------------------------------------->
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script>
+  // Import the functions you need from the SDKs you need
+ // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+  //import { } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvm4eHLEb39wDT289Rf_u43oMJ07p0Bz4",
+    authDomain: "fir-tut1-5a064.firebaseapp.com",
+    projectId: "fir-tut1-5a064",
+    storageBucket: "fir-tut1-5a064.appspot.com",
+    messagingSenderId: "865947246993",
+    appId: "1:865947246993:web:92cadb2026a996344d3a30"
+  };
+
+  // Initialize Firebase
+ // const app = initializeApp(firebaseConfig);
+ firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+<script src="javascript/auth.js"></script>
+</body>
+</html>

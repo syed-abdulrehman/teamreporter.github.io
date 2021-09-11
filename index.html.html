@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- firebase sdk-->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
+   <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    
+    <nav class="#f57f17 #d81b60 pink darken-1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo"> Team Reporting </a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="#modal2" class="modal-trigger">Login</a></li>
+            <li><a href="#modal1" class="modal-trigger">SignUp</a></li>
+            <li><a onclick="signout()">LogOut</a></li>
+          </ul>
+        </div>
+     </nav>
+     <h5 id="welcome" class="pink-text"></h5>
+     <!--  Sign Up Modal Trigger -->
+     <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+    
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Signup</h4>
+          <form onsubmit="signup(event)">
+          <input type="text" id="signupuser" placeholder="Email"/>
+          <input type="password" id="signuppassword" placeholder="Password"/>
+          <input type="submit" class="btn waves-effect #f57f17 yellow darken-4"/>
+        </form>
+        </div>
+        </div>
+    </nav>
+    
+    
+    <!-- Log In Modal Trigger -->
+  <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal</a> -->
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4>
+        <form onsubmit="signin(event)">
+        <input type="text" id="loginuser" placeholder="Email"/>
+        <input type="password" id="loginpassword" placeholder="Password"/>
+        <input type="submit" class="btn waves-effect #f57f17 yellow darken-4"/>
+      </form>
+      </div>
+    
+    </div>
+    <!-- TEAM CREATION MODAL-->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Create Team</h4>
+        <form id="team-add">
+        <input type="text" name="name" placeholder="Enter Team Name"/><br><br><br>
+        <h4>Add Members</h4>
+        <input type="text" name="teammembers" placeholder="Enter Member Name"/>
+        <input type="submit" class="modal-trigger waves-effect waves-light btn-small"/>
+      </form>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+
+<div>
+<ul id= "cafe-list">
+</ul>
+</div>
+<!--
+<div>
+  <form id="add-cafe-form">
+    <input type="text" placeholder="Enter Name" name="name">
+    <input type="text" placeholder="Enter Email" name="email">
+    <input type="text" placeholder="Enter Age" name="age">
+    <input type="submit"/>
+  </form>
+</div>
+
+-->
+<!--    DIV FOR  TEAMS-->
+<div class="teamdiv">
+<div class="row ">
+  <div class="col s12 m5">
+    <div class="card #f8bbd0 pink lighten-1">
+      <div class="card-content #fce4ec pink lighten-1 ">
+        <span class="card-title white-text">Your Teams</span>
+        <div class="collection team-names">
+         </div>
+      </div>
+      <div class="card-action">
+        <a href="#modal3" class="modal-trigger waves-effect waves-light btn-large">Create Team</a>     
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="teamdiv">
+    <div class="row ">
+      <div class="col s12 m5">
+        <div class="card #f8bbd0 pink lighten-1">
+          <div class="card-content #fce4ec pink lighten-1 ">
+            <span class="card-title white-text">Teams You are part of</span>
+            <div class="collection team-you-are-part">
+              
+             </div>
+          </div>
+          <div class="card-action">
+            <a href="#modal3" class="modal-trigger waves-effect waves-light btn-large">Create Team</a>     
+          </div>
+        </div>
+      </div>
+    
+  
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+<!--------------javascript files ---------------------------------------------->
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script>
+                     document.addEventListener('DOMContentLoaded', function() {
+                     var elems = document.querySelectorAll('.modal');
+                     var instances = M.Modal.init(elems);
+                      });
+                </script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script> 
+<!--<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvm4eHLEb39wDT289Rf_u43oMJ07p0Bz4",
+    authDomain: "fir-tut1-5a064.firebaseapp.com",
+    projectId: "fir-tut1-5a064",
+    storageBucket: "fir-tut1-5a064.appspot.com",
+    messagingSenderId: "865947246993",
+    appId: "1:865947246993:web:92cadb2026a996344d3a30"
+  };
+ firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+<script src="javascript/auth.js"></script>
+</body>
+</html>
